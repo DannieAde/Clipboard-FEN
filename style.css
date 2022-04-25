@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Primary */
+    --strong-Cyan: hsl(171, 66%, 44%);
+    --light-Blue: hsl(233, 100%, 69%);
+
+    /* Neutral */
+    --dark-Grayish-Blue: hsl(210, 10%, 33%);
+    --grayish-Blue: hsl(201, 11%, 66%);
+}
+
+body{
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* helper styles */
+h2{
+    line-height: 1.3;
+    color: var(--dark-Grayish-Blue);
+    max-width: 18.75rem;
+    margin-bottom: 2rem;
+}
+
+p{
+    line-height: 1.4;
+    max-width: 19.375rem;
+    color: var(--grayish-Blue);
+    margin-bottom: 3.375rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Header Styles */
+.header{
+    background-image: url(./images/bg-header-mobile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header img{
+    margin-top: 7.625rem;
+    margin-bottom: 4.625rem;
+}
+
+.btn{
+    display: block;
+    color: white;
+    padding: 1.25rem 4.75rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: hover .3s ease-in-out;
+}
+
+.btn:hover{
+    animation: btnAnimation 300ms ease-in-out forwards;
+}
+
+.btn-iOS{
+    background-color: var(--strong-Cyan);
+    margin-bottom: 1.75rem;
+    box-shadow: 0 4px hsl(171, 68%, 36%);
+}
+
+.btn-mac{
+    background-color: var(--light-Blue);
+    margin-bottom: 10.5rem;
+    box-shadow: 0 4px hsl(233, 71%, 61%);
+}
+
+/* section => display styles */
+.display .container img{
+    width: 19.5rem;
+    height: 15rem;
+    margin-bottom: 4rem;
+}
+
+.display .inner-container .icon{
+    height: 2.5rem;
+    width: 3rem;
+}
+
+/* section => company styles */
+.companies .container img{
+    margin-top: 4.75rem;
+}
+
+.companies .flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.companies .inner-container{
+    margin-top: 11.125rem;
+}
+
+/* footer styles */
+.footer{
+    padding: 3.375rem;;
+    background-color: var(--grayish-Blue);
+}
+
+.footer .container .logo{
+    margin-bottom: 3rem;
+    width: 3.375rem;
+    height: 3.375rem;
+}
+
+.footer .container .link-items{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .container .link-items .links{
+    color: var(--dark-Grayish-Blue);
+}
+
+.footer .container .link-items .links:not(:last-child){
+    margin-bottom: 2.25rem;
+}
+
+.footer .container .footer-icons{
+    margin-top: 3.5rem;
+}
+
+.footer .container .footer-icons a:not(:last-child){
+    margin-right: 2.5rem;
+}
+
+.footer .container .links:hover{
+    color: var(--strong-Cyan);
+}
+
+/* Animations */
+@keyframes btnAnimation{
+    0%{
+        transform: translateY(0px) scale(1);
+    }
+
+    100%{
+        transform: translateY(3px) scale(1.1);
+    }
+}
+
+/* for tablet and laptop */
+@media (min-width: 768px) {
+
+    /* helper styles */
+    h2, p {
+        max-width: 43rem;
+    }
+
+    .buttons{
+        display: flex;
+        gap: 3rem;
+        margin-bottom: none;
+    }
+
+    .buttons .btn{
+        height: 3.5rem;
+    }
+
+	.grid-3{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    /* display styles */
+    .display .container img{
+        width: 50.625rem;
+        height: 29.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .display .flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 7rem;
+    }
+
+    .display h2, p{
+        max-width: 21rem;
+    }
+
+    /* company styles */
+    .companies .flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 3.125rem;
+        width: 50%;
+    }
+
+    /* footer styles */
+    .footer .container{
+        display: grid;
+        grid-template-columns: 1fr 4fr 2fr;
+    }
+
+    .footer .container .link-items{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 6.125rem;
+    }
+
+    .footer .container .link-items .links{
+        justify-self: left;
+    }
+
+    .footer .container .footer-icons{
+        align-self: center;
+        justify-self: right;
+    }
+
+    .footer .container .footer-icons{
+        margin: 0;
+    }
+}
